@@ -1,3 +1,4 @@
+{{--
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -169,4 +170,23 @@
             </div>
         </div>
     </body>
+</html>
+--}}
+
+    <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Conferences</title>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+</head>
+<body>
+<header>
+    <form action="#" method="POST">
+        <input type="text" class="datepicker">
+    </form>
+</header>
+<script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
+</body>
 </html>
