@@ -6,9 +6,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/index', function () {
+    return view('main.index');
+})->name('index');
 
 Route::get('/client', function () {
     return view('user_client.client');

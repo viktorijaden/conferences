@@ -10,8 +10,7 @@
             margin: 0 auto;
             background-color: white;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         h2 {
             text-align: center;
@@ -31,7 +30,6 @@
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
-            border-radius: 4px;
             font-size: 16px;
         }
         button {
@@ -50,7 +48,6 @@
             background-color: #fff;
             padding: 20px;
             margin-bottom: 20px;
-            border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .conference-item h3 {
@@ -66,10 +63,12 @@
             border: none;
             color: white;
             padding: 10px 15px;
-            border-radius: 4px;
         }
         .conference-item button:hover {
             background-color: #a6bb68;
+        }
+        a:visited{
+            color: white;
         }
     </style>
 

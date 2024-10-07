@@ -42,15 +42,12 @@
         0 0 20px rgba(255, 255, 255, 0.5);
     }
 
-
 </style>
 <body>
 
 <nav id="navbar" class="navbar sticky-top navbar-dark navbar-expand-lg">
     <div class="container-fluid">
-        <div class="navbar-brand col-lg-2 col-md-4">
-            <h2 class="nav-link active">Viktorija Denisevičiūtė PIT-22-NL</h2>
-        </div>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon ms"></span>
         </button>
@@ -58,6 +55,9 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <div class="col d-flex justify-content-center">
                 <ul class="navbar-nav">
+                    <li class="nav-item pe-2 ps-2">
+                        <a class="nav-link active" aria-current="page" href="{{ route('index') }}">Pagrindinis</a>
+                    </li>
                     <li class="nav-item pe-2 ps-2">
                         <a class="nav-link active" aria-current="page" href="{{ route('client') }}">Klientas</a>
                     </li>
@@ -70,10 +70,8 @@
                 </ul>
             </div>
         </div>
+
 </nav>
-
-
-
 
 <div>@yield('content')</div>
 <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
