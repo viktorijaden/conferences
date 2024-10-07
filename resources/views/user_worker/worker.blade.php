@@ -29,11 +29,11 @@
         <p><strong>Laikas:</strong> 10:00 - 15:00</p>
         <p><strong>Vieta:</strong> Vyks nuotoliniu būdu</p>
         <p><strong>Aprašymas:</strong> pirma konferencija kuri vyks nuotoliniu būdu 2024 m. Spalio 10 - 15 d. 10:00 - 15:00.</p>
-        <p><strong>Registruoti klientai:</strong> 5</p>
+        <p><strong>Dalyviai:</strong> 3</p>
         <ul>
-            <li>Klientas 1</li>
-            <li>Klientas 2</li>
-            <li>Klientas 3</li>
+            <li>pirmas</li>
+            <li>antras</li>
+            <li>trecias</li>
         </ul>
     </div>
 
@@ -43,10 +43,10 @@
         <p><strong>Laikas:</strong> 09:00 - 17:00</p>
         <p><strong>Vieta:</strong> Vilnius, VVK</p>
         <p><strong>Aprašymas:</strong> antra konferencija</p>
-        <p><strong>Registruoti klientai:</strong> 3</p>
+        <p><strong>Dalyviai:</strong> 2</p>
         <ul>
-            <li>Klientas 4</li>
-            <li>Klientas 5</li>
+            <li>pirmas</li>
+            <li>antras</li>
         </ul>
     </div>
 
@@ -56,7 +56,7 @@
         <p><strong>Laikas:</strong> 12:00 - 16:00</p>
         <p><strong>Vieta:</strong> Vyks nuotoliniu būdu</p>
         <p><strong>Aprašymas:</strong> trečia konferencija</p>
-        <p><strong>Registruoti klientai:</strong> 0</p>
+        <p><strong>Dalyviai:</strong> 0</p>
     </div>
 
 @endsection

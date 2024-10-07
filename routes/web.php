@@ -21,3 +21,15 @@ Route::get('/worker', function () {
 Route::get('/admin', function () {
     return view('user_admin.admin');
 })->name('admin');
+
+Route::get('/userinfo', function () {
+    return view('user_admin.userinfo');
+})->name('userinfo');
+
+Route::get('/conferenceinfo', function () {
+    return view('user_admin.conferenceinfo');
+})->name('conferenceinfo');
+
+Route::get('/info', function () {
+    return view('conferences.info');
+})->name('info');

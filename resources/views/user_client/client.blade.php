@@ -28,14 +28,18 @@
         .conference button:hover {
             background-color: #a6bb68;
         }
-        .details {
+        a:visited {
+            color: white;
+            text-decoration: none;
+        }
+/*        .details {
             display: none;
             margin-top: 15px;
             padding: 10px;
             background-color: #f9f9f9;
             border-radius: 5px;
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-        }
+        }*/
     </style>
 <div class="conference">
     <h3>pirma konferencija</h3>
@@ -43,10 +47,10 @@
     <p><strong>Laikas:</strong> 10:00 - 15:00</p>
     <p><strong>Vieta:</strong> Vyks nuotoliniu būdu</p>
     <button>Registruotis</button>
+    <button><a href="{{ route('info') }}">Peržiūrėti</a></button>
+{{--
     <button onclick="toggleDetails(this)">Peržiūrėti</button>
-    <div class="details">
-        <p>Pirma konferencija kuri vyks nuotoliniu būdu 2024 m. Spalio 10 - 15 d. 10:00 - 15:00.</p>
-    </div>
+--}}
 </div>
 
 <div class="conference">
@@ -55,10 +59,7 @@
     <p><strong>Laikas:</strong> 09:00 - 17:00</p>
     <p><strong>Vieta:</strong> Vilnius, VVK</p>
     <button>Registruotis</button>
-    <button onclick="toggleDetails(this)">Peržiūrėti</button>
-    <div class="details">
-        <p>antra konferencija</p>
-    </div>
+    <button><a href="{{ route('info') }}">Peržiūrėti</a></button>
 </div>
 
 <div class="conference">
@@ -67,13 +68,10 @@
     <p><strong>Laikas:</strong> 12:00 - 16:00</p>
     <p><strong>Vieta:</strong> Vyks nuotoliniu būdu</p>
     <button>Registruotis</button>
-    <button onclick="toggleDetails(this)">Peržiūrėti</button>
-    <div class="details">
-        <p>trečia konferencija</p>
-    </div>
+    <button><a href="{{ route('info') }}">Peržiūrėti</a></button>
 </div>
 
-    <script>
+{{--    <script>
         function toggleDetails(button) {
             const details = button.nextElementSibling;
 
@@ -83,6 +81,6 @@
                 details.style.display = "none";
             }
         }
-    </script>
+    </script>--}}
 
 @endsection
