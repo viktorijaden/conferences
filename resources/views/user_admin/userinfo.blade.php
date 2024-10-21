@@ -1,5 +1,5 @@
 @extends('app')
-@section('title','Main')
+@section('title','admin')
 @section('content')
 
 @endsection

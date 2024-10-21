@@ -1,5 +1,5 @@
     @extends('app')
-    @section('title', 'client')
+    @section('title', 'admin')
     @section('content')
         <style>
             .container {
