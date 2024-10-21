@@ -2,9 +2,6 @@
     @section('title', 'client')
     @section('content')
         <style>
-            body {
-                padding-top: 125px;
-            }
             .container {
                 max-width: 600px;
                 margin: 0 auto;
@@ -12,6 +9,7 @@
                 padding: 20px;
                 border-radius: 8px;
                 box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                margin-bottom: 30px;
             }
             h2 {
                 text-align: center;
@@ -43,9 +41,6 @@
             button:hover {
                 background-color: #a6bb68;
             }
-            /*.conference-list {
-                margin-top: 40px;
-            }*/
             .conference-item {
                 background-color: #fff;
                 padding: 20px;
@@ -112,11 +107,15 @@
                 <p><strong>Data:</strong> ${date}</p>
                 <p><strong>Lokacija:</strong> ${location}</p>
                 <button>Keisti</button>
-                <button>Trinti</button>
+                <button class="delete">Trinti</button>
             `;
 
-                conferenceList.appendChild(conferenceDiv);
+                const deleteButton = conferenceDiv.querySelector('.delete');
+                deleteButton.addEventListener('click', function() {
+                    conferenceList.removeChild(conferenceDiv);
+                });
 
+                conferenceList.appendChild(conferenceDiv);
                 form.reset();
             });
 

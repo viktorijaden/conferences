@@ -20,6 +20,9 @@
         font-weight: 500;
         text-decoration-line: none !important;
     }
+    body{
+        padding-top: 125px;
+    }
     .navbar {
         background-color: rgb(176, 190, 149) !important;
         transition: top 0.4s;
@@ -31,7 +34,6 @@
     .nav-item{
         font-size: 28px;
     }
-
     .title:hover{
         text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
         0 0 20px rgba(255, 255, 255, 0.5);
@@ -41,7 +43,15 @@
         text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
         0 0 20px rgba(255, 255, 255, 0.5);
     }
-
+    .footer{
+        background-color: #9cb086;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px 0;
+        color: white;
+    }
 </style>
 <body>
 
@@ -74,6 +84,9 @@
 </nav>
 
 <div>@yield('content')</div>
+
+<footer class="footer">Viktorija Denisevičiūtė PIT-22-NL</footer>
+
 <script type="text/javascript" src="{{ mix('js/app.js') }}"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

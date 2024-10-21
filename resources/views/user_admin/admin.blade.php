@@ -1,16 +1,14 @@
 @extends('app')
-@section('title', 'client')
+@section('title', 'admin')
 @section('content')
     <style>
-        body {
-            padding-top: 125px;
-        }
         .container {
             max-width: 600px;
             margin: 0 auto;
             background-color: white;
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
         }
         h2 {
             text-align: center;
@@ -41,9 +39,6 @@
         button:hover {
             background-color: #a6bb68;
         }
-        /*.conference-list {
-            margin-top: 40px;
-        }*/
         .conference-item {
             background-color: #fff;
             padding: 20px;

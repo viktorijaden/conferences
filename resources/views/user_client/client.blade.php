@@ -2,9 +2,6 @@
 @section('title', 'client')
 @section('content')
     <style>
-        body {
-            padding-top: 110px;
-        }
         .conference {
             max-width: 600px;
             margin: 0 auto;
@@ -30,25 +27,15 @@
             color: white;
             text-decoration: none;
         }
-/*        .details {
-            display: none;
-            margin-top: 15px;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
-        }*/
     </style>
+
 <div class="conference">
     <h3>pirma konferencija</h3>
     <p><strong>Data:</strong> 2024 m. Spalio 10 - 15 d.</p>
     <p><strong>Laikas:</strong> 10:00 - 15:00</p>
     <p><strong>Vieta:</strong> Vyks nuotoliniu būdu</p>
-    <button>Registruotis</button>
-    <button><a href="{{ route('info') }}">Peržiūrėti</a></button>
-{{--
-    <button onclick="toggleDetails(this)">Peržiūrėti</button>
---}}
+    <button class="submit">Registruotis</button>
+    <button><a href="{{ route('show') }}">Peržiūrėti</a></button>
 </div>
 
 <div class="conference">
@@ -57,7 +44,7 @@
     <p><strong>Laikas:</strong> 09:00 - 17:00</p>
     <p><strong>Vieta:</strong> Vilnius, VVK</p>
     <button>Registruotis</button>
-    <button><a href="{{ route('info') }}">Peržiūrėti</a></button>
+    <button><a href="{{ route('conferencecontent') }}">Peržiūrėti</a></button>
 </div>
 
 <div class="conference">
@@ -66,19 +53,7 @@
     <p><strong>Laikas:</strong> 12:00 - 16:00</p>
     <p><strong>Vieta:</strong> Vyks nuotoliniu būdu</p>
     <button>Registruotis</button>
-    <button><a href="{{ route('info') }}">Peržiūrėti</a></button>
+    <button><a href="{{ route('conferencecontent') }}">Peržiūrėti</a></button>
 </div>
-
-{{--    <script>
-        function toggleDetails(button) {
-            const details = button.nextElementSibling;
-
-            if (details.style.display === "none" || details.style.display === "") {
-                details.style.display = "block";
-            } else {
-                details.style.display = "none";
-            }
-        }
-    </script>--}}
 
 @endsection

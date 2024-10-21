@@ -3,9 +3,6 @@
 @section('content')
 
     <style>
-        body {
-            padding-top: 110px;
-        }
         .conference {
             max-width: 600px;
             margin: 0 auto;
