@@ -69,14 +69,23 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('index') }}">Pagrindinis</a>
                     </li>
                     <li class="nav-item pe-2 ps-2">
-                        <a class="nav-link active" aria-current="page" href="{{ route('client') }}">Klientas</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('client') }}">Konferencijos</a>
                     </li>
                     <li class="nav-item pe-2 ps-2">
                         <a class="nav-link active" aria-current="page" href="{{ route('worker') }}">Darbuotojas</a>
                     </li>
+                    @if (auth()->check())
+                        @if (auth()->user()->admin)
+                            <li class="nav-item pe-2 ps-2">
+                                <a class="nav-link active" aria-current="page" href="{{ route('admin') }}">Administratorius</a>
+                            </li>
+                        @endif
+                    @endif
+                     @if (auth()->check())
                     <li class="nav-item pe-2 ps-2">
-                        <a class="nav-link active" aria-current="page" href="{{ route('admin') }}">Administratorius</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('logout') }}">Logout {{auth()->user()->name}}</a>
                     </li>
+                    @endif
                 </ul>
             </div>
         </div>

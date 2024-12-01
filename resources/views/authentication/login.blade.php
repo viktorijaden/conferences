@@ -18,7 +18,7 @@
         .container p {
             margin-bottom: 10px;
         }
-        .button {
+        button {
             background-color: rgb(176, 190, 149);
             color: white;
             padding: 10px 20px;
@@ -26,7 +26,7 @@
             cursor: pointer;
             width: 200px;
         }
-        .button:hover {
+        button:hover {
             background-color: #a6bb68;
         }
         a:visited {
@@ -34,27 +34,19 @@
             text-decoration: none;
         }
     </style>
-
     <div class="container">
-        <p>Jei norite prisijungti prie paskyros spauskite</p>
-        <a href="{{ route('login') }}" class="button">Prisijungti</a>
-
-        <p class="mt-4">Jei norite sukurti paskyrą spauskite</p>
-        <a href="{{ route('register') }}" class="button">Sukurti paskyrą</a>
-        <br>
-        <br>
-        <hr>
-        <p class="mt-4">
-            Turėdami vartotojo paskyrą galėsite prisiregistruoti prie konferencijų.
-            <br>
-            <br>
-            Turėdami darbuotojo paskyrą, galėsite peržiūrėti konferencijas ir jų narius.
-            <br>
-            <br>
-            Turėdami administratoriaus paskyrą galėsite kurti, šalinti, redaguoti konferencijas, valdyti narius.
-        </p>
+        <h2>Prisijungimas</h2>
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+            <div class="form-group">
+                <label for="email">El. paštas</label>
+                <input type="email" name="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Slaptažodis</label>
+                <input type="password" name="password" id="password" class="form-control" required>
+            </div>
+            <button type="submit">Prisijungti</button>
+        </form>
     </div>
-    @if (auth()->check())
-        <p>User: {{auth()->user()->name}}</p>
-    @endif
 @endsection

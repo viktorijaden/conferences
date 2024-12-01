@@ -32,6 +32,7 @@
                 border-radius: 4px;
                 font-size: 16px;
             }
+
             button {
                 background-color: rgb(176, 190, 149);
                 color: white;
@@ -70,29 +71,50 @@
 
         <div class="container">
             <h2>Pridėti naują konferenciją</h2>
-            <form id="conference-form">
+            <form id="conference-form" action="{{ route('conferences.store') }}" method="POST">
+                @csrf
                 <label for="name">Pavadinimas:</label>
-                <input type="text" id="name" name="conference_name" placeholder="Įveskite pavadinimą" required>
+                <input type="text" id="name" name="title" placeholder="Įveskite pavadinimą" required>
+
+                <label for="about">Apie:</label>
+                <input type="text" id="about" name="description" placeholder="Įveskite pavadinimą" required>
 
                 <label for="date">Data:</label>
-                <input type="text" id="date" class="datepicker" name="conference_date" placeholder="Pasirinkite datą" required>
+                <input type="date" id="date" name="date_time" placeholder="Pasirinkite datą" required>
 
                 <label for="location">Lokacija:</label>
-                <input type="text" id="location" name="conference_location" placeholder="Įveskite lokaciją" required>
+                <input type="text" id="location" name="location" placeholder="Įveskite lokaciją" required>
 
                 <button type="submit">Pridėti konferenciją</button>
             </form>
         </div>
-        <br></br>
+        <br>
         <div class="container" id="conference-list">
             <h2>Pridėtos konferencijos</h2>
+            @forelse($conferences as $conf)
+                <div>
+                    <h3>Pavadinimas: {{ $conf->title }}</h3>
+                    <p><strong>Data: {{ $conf->date_time }}</strong></p>
+                    <p><strong>Lokacija: {{ $conf->location }}</strong></p>
+                    <p><strong>Apie: {{ $conf->description }}</strong></p>
+                    <a href="{{ route('conferences.edit', $conf->id) }}" class="edit">Keisti</a>
+                    <form action="{{ route('conferences.destroy', $conf->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="delete">Trinti</button>
+                    </form>
+                </div>
+            @empty
+                <p>Konferencijų nėra</p>
+            @endforelse
+
         </div>
 
         <script>
             const form = document.getElementById('conference-form');
             const conferenceList = document.getElementById('conference-list');
 
-            form.addEventListener('submit', function(event) {
+           /* form.addEventListener('submit', function(event) {
                 event.preventDefault();
 
                 const name = document.getElementById('name').value;
@@ -118,11 +140,11 @@
                 conferenceList.appendChild(conferenceDiv);
                 form.reset();
             });
-
-            document.addEventListener('DOMContentLoaded', function() {
+*/
+/*            document.addEventListener('DOMContentLoaded', function() {
                 const datepicker = new Datepicker(document.querySelector('.datepicker'), {
-                    format: 'yyyy-mm-dd'
+                    dateFormat: 'yyyy-mm-dd'
                 });
-            });
+            });*/
         </script>
     @endsection

@@ -28,32 +28,16 @@
             text-decoration: none;
         }
     </style>
-
-<div class="conference">
-    <h3>pirma konferencija</h3>
-    <p><strong>Data:</strong> 2024 m. Spalio 10 - 15 d.</p>
-    <p><strong>Laikas:</strong> 10:00 - 15:00</p>
-    <p><strong>Vieta:</strong> Vyks nuotoliniu būdu</p>
-    <button class="submit">Registruotis</button>
-    <button><a href="{{ route('show') }}">Peržiūrėti</a></button>
-</div>
-
-<div class="conference">
-    <h3>antra konferencija</h3>
-    <p><strong>Data:</strong> 2024 m. Spalio 12 d.</p>
-    <p><strong>Laikas:</strong> 09:00 - 17:00</p>
-    <p><strong>Vieta:</strong> Vilnius, VVK</p>
-    <button>Registruotis</button>
-    <button><a href="{{ route('conferencecontent') }}">Peržiūrėti</a></button>
-</div>
-
-<div class="conference">
-    <h3>trečia konferencija</h3>
-    <p><strong>Data:</strong> 2024 m. Spalio 20 d.</p>
-    <p><strong>Laikas:</strong> 12:00 - 16:00</p>
-    <p><strong>Vieta:</strong> Vyks nuotoliniu būdu</p>
-    <button>Registruotis</button>
-    <button><a href="{{ route('conferencecontent') }}">Peržiūrėti</a></button>
-</div>
+    <h2>Pridėtos konferencijos</h2>
+    @forelse($conferences as $conf)
+        <div class="conference">
+            <h3>Pavadinimas: {{ $conf->title }}</h3>
+            <p><strong>Data: {{ $conf->date_time }}</strong></p>
+            <p><strong>Lokacija: {{ $conf->location }}</strong></p>
+            <p><strong>Apie: {{ $conf->description }}</strong></p>
+        </div>
+    @empty
+        <p>Konferencijų nėra</p>
+    @endforelse
 
 @endsection
