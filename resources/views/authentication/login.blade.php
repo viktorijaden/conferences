@@ -29,8 +29,12 @@
         button:hover {
             background-color: #a6bb68;
         }
+        a {
+            color: rgb(176, 190, 149);
+            text-decoration: none;
+        }
         a:visited {
-            color: white;
+            color: rgb(176, 190, 149);
             text-decoration: none;
         }
     </style>
@@ -48,5 +52,7 @@
             </div>
             <button type="submit">Prisijungti</button>
         </form>
+        <br>
+        <p>Neturite paskyros? <a href="{{ route('register') }}">Sukurti paskyrą</a></p>
     </div>
 @endsection

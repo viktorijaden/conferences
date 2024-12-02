@@ -13,9 +13,7 @@ Route::get('/index', function () { return view('main.index'); })->name('index');
 Route::get('/', [HomeController::class, 'index'])->name('main.index');
 
 Route::get('/client', [ClientController::class , 'index' ])->name('client');
-
 Route::get('/worker', function () { return view('user_worker.worker'); })->name('worker');
-
 Route::get('/admin', function () { return view('user_admin.admin'); })->name('admin');
 
 Route::get('/userinfo', [AdminController::class , 'index' ])->name('userinfo');

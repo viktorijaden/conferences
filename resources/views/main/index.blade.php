@@ -54,7 +54,7 @@
             Turėdami administratoriaus paskyrą galėsite kurti, šalinti, redaguoti konferencijas, valdyti narius.
         </p>
     </div>
-    @if (auth()->check())
+{{--    @if (auth()->check())
         <p>User: {{auth()->user()->name}}</p>
-    @endif
+    @endif--}}
 @endsection

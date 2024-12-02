@@ -29,8 +29,12 @@
         button:hover {
             background-color: #a6bb68;
         }
+        a {
+            color: rgb(176, 190, 149);
+            text-decoration: none;
+        }
         a:visited {
-            color: white;
+            color: rgb(176, 190, 149);
             text-decoration: none;
         }
     </style>
@@ -67,5 +71,7 @@
 
             <button type="submit">Registruotis</button>
         </form>
+        <br>
+        <p>Jau turite paskyrą? <a href="{{ route('login') }}">prisijunkite</a></p>
     </div>
 @endsection

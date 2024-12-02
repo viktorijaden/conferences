@@ -83,7 +83,7 @@
                     @endif
                      @if (auth()->check())
                     <li class="nav-item pe-2 ps-2">
-                        <a class="nav-link active" aria-current="page" href="{{ route('logout') }}">Logout {{auth()->user()->name}}</a>
+                        <a class="nav-link active" aria-current="page" href="{{ route('logout') }}">Atsijungti {{auth()->user()->name}}</a>
                     </li>
                     @endif
                 </ul>

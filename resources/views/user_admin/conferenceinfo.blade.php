@@ -32,7 +32,23 @@
                 border-radius: 4px;
                 font-size: 16px;
             }
+            .edit {
+                width: 560px;
+                height: 45px;
+                background-color: rgb(176, 190, 149);
+                color: white;
+                border: none;
+                padding: 10px 15px;
+                border-radius: 4px;
+                text-decoration: none;
+                cursor: pointer;
+                display: inline-block;
+                text-align: center;
+            }
 
+            .edit:hover {
+                background-color: #a6bb68;
+            }
             button {
                 background-color: rgb(176, 190, 149);
                 color: white;
@@ -67,6 +83,10 @@
             .conference-item button:hover {
                 background-color: #a6bb68;
             }
+            a:visited{
+                color: white;
+                text-decoration: none;
+            }
         </style>
 
         <div class="container">
@@ -92,12 +112,15 @@
         <div class="container" id="conference-list">
             <h2>Pridėtos konferencijos</h2>
             @forelse($conferences as $conf)
+                <hr>
                 <div>
                     <h3>Pavadinimas: {{ $conf->title }}</h3>
                     <p><strong>Data: {{ $conf->date_time }}</strong></p>
                     <p><strong>Lokacija: {{ $conf->location }}</strong></p>
                     <p><strong>Apie: {{ $conf->description }}</strong></p>
                     <a href="{{ route('conferences.edit', $conf->id) }}" class="edit">Keisti</a>
+                    <br>
+                    <br>
                     <form action="{{ route('conferences.destroy', $conf->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
@@ -113,38 +136,5 @@
         <script>
             const form = document.getElementById('conference-form');
             const conferenceList = document.getElementById('conference-list');
-
-           /* form.addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                const name = document.getElementById('name').value;
-                const date = document.getElementById('date').value;
-                const location = document.getElementById('location').value;
-
-                const conferenceDiv = document.createElement('div');
-                conferenceDiv.classList.add('conference-item');
-
-                conferenceDiv.innerHTML = `
-                <h3>${name}</h3>
-                <p><strong>Data:</strong> ${date}</p>
-                <p><strong>Lokacija:</strong> ${location}</p>
-                <button>Keisti</button>
-                <button class="delete">Trinti</button>
-            `;
-
-                const deleteButton = conferenceDiv.querySelector('.delete');
-                deleteButton.addEventListener('click', function() {
-                    conferenceList.removeChild(conferenceDiv);
-                });
-
-                conferenceList.appendChild(conferenceDiv);
-                form.reset();
-            });
-*/
-/*            document.addEventListener('DOMContentLoaded', function() {
-                const datepicker = new Datepicker(document.querySelector('.datepicker'), {
-                    dateFormat: 'yyyy-mm-dd'
-                });
-            });*/
         </script>
     @endsection
